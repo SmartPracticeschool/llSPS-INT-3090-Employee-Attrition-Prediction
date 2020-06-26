@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styleee.css') }}">
+
+<style>
+.login{
+top: 20%;
+}
+</style>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Employee attrition</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="http://localhost:5000/" method="post">
+    <h2>Marital status</h2>
+    <p>01-single<br> 10-married<br> 00-divorced<br></p>
+    <input type="text" name="mar1" placeholder="" required="required" />
+	<input type="text" name="mar2" placeholder="" required="required" /><br>
+	<h2>Job role</h2>
+    <p>sales executive-00000010<br> research scientist-00000100<br>laboratory technician-01000000<br> manufacturing director-00010000<br> healthcare representative-00000000<br> manager-00100000<br> sales representative-00000001<br> research director-00001000<br> human resource-10000000</p>
+				<input type="text" name="jobrole1" placeholder="" required="required" />
+				<input type="text" name="jobrole2" placeholder="" required="required" />
+				<input type="text" name="jobrole3" placeholder="" required="required" />
+				<input type="text" name="jobrole4" placeholder="" required="required" />
+				<input type="text" name="jobrole5" placeholder="" required="required" />
+				<input type="text" name="jobrole6" placeholder="" required="required" />
+				<input type="text" name="jobrole7" placeholder="" required="required" />
+				<input type="text" name="jobrole8" placeholder="" required="required" /><br>
+				
+	<h2>Education field</h2>
+    <p>life science-10000<br> other-00010<br>medical-00100<br> marketing-01000<br> technical degree-00001<br> human resource-000000<br></p>
+				<input type="text" name="education field1" placeholder="" required="required" />
+				<input type="text" name="education field2" placeholder="" required="required" />
+				<input type="text" name="education field3" placeholder="" required="required" />
+				<input type="text" name="education field4" placeholder="" required="required" />
+				<input type="text" name="education field5" placeholder="" required="required" /><br>
+	<h2>Department</h2>
+    <p>sales -01<br> research and development-10<br>human resource-00<br></p>
+				
+		<input type="text" name="department1" placeholder="" required="required" />
+		<input type="text" name="department2" placeholder="" required="required" /><br>
+	<h2>Travel</h2>
+   <p>travel rarely-01<br>  travel frequently-10<br> never travel-00<br></p>
+        <input type="text" name="travel1" placeholder="" required="required" />
+        <input type="text" name="travel2" placeholder="" required="required" /><br>
+		<h2>Age</h2>		
+        <input type="text" name="age" placeholder="age" required="required" /><br>
+        
+        <h2>Daily rate</h2>
+       	<input type="text" name="dailyrate" placeholder="daily rate" required="required" /> <br>
+		
+		<h2>Distance from home</h2>
+		<input type="text" name="distnacefromhome" placeholder="distance from home" required="required" /><br>
+		
+		<h2>Education</h2>
+				<input type="text" name="education" placeholder="education- enter number between 1 and 5" required="required" /><br>
+			<h2>Environment satisfaction</h2>	
+		<input type="text" name="environmetn satisfaction" placeholder="environment satisfaction- enter number between 1 and 4" required="required" /><br>
+		<h2>Gender</h2>
+		<input type="text" name=" gender" placeholder="female=0 male=1" required="required" /><br>
+		<h2>Hourly rate</h2>
+				<input type="text" name=" hourly rate" placeholder="hourly rate (between 0 and 100)" required="required" /><br>
+						<h2>Job involvement</h2>
+						<input type="text" name=" jobinvolve" placeholder="job involvement-enter number between 1 and 4  " required="required" /><br>
+				<h2>Job level</h2>
+				<input type="text" name=" joblevel" placeholder="job level- enter number between 1 and 5" required="required" /><br>
+				
+				<h2>Job satisfaction</h2>
+				<input type="text" name="job satisfaction" placeholder="job satisfaction-enter number between 1 and 5" required="required" /><br>
+				<h2>Monthly income</h2>
+				<input type="text" name="monthly income" placeholder="monthly income" required="required" /><br>
+				<h2>Monthly rate</h2>
+				<input type="text" name="monthly rate" placeholder="monthly rate" required="required" /><br>
+				<h2>Number of companies worked before</h2>
+				<input type="text" name="numcompworked" placeholder="number of companies worked with" required="required" /><br>
+				<h2>Overtime</h2>
+				<input type="text" name="overtime" placeholder=" overtime yes=1 no=0" required="required" /><br>
+				<h2>Percentage salary hike</h2>
+				<input type="text" name="percent sal hik" placeholder="percent salary hike hike (between 0 and 100) " required="required" /><br>
+				<h2>Performance rating</h2>
+				<input type="text" name="perfomrancerating" placeholder="performance rating- enter number between 1 and 5" required="required" /><br>
+				<h2>Relationship satisfaction</h2>
+				<input type="text" name="relationship satisfaction" placeholder="relationship satisfaction- enter number between 1 and 5" required="required" /><br>
+				<h2>Stock option level</h2>
+				<input type="text" name="stockopt" placeholder="stock option level- enter number between 0 and 5" required="required" /><br>
+				<h2>Total work years</h2>
+				<input type="text" name="totworkyears" placeholder="total work years" required="required" /><br>
+				<h2>Training time</h2>
+				<input type="text" name="traintime" placeholder="training time" required="required" /><br>
+				<h2>Work life balance</h2>
+				<input type="text" name="worklifebal" placeholder="work life balance- enter number between 1 and 5" required="required" /><br>
+				<h2>Years at company</h2>
+				<input type="text" name="yearsatcomp" placeholder="years at company" required="required" /><br>
+				<h2>Years in current role</h2>
+				<input type="text" name="yearsincurrrole" placeholder="years in current role" required="required" /><br>
+				<h2>Years since last promotion</h2>
+				<input type="text" name="yearslastpromo" placeholder="years since last promotion" required="required" /><br>
+				<h2>Years with current manager</h2>
+				<input type="text" name="yearswithcurrmanageer" placeholder="years with current manager" required="required" /><br>
+				
+				
+				
+				
+				
+				
+				
+
+		
+
+       	
+
+
+
+		
+		
+		
+	
+
+
+
+
+        
+
+<br>
+<br>
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    
+    </form>
+
+   <br>
+   <br>
+
+ </div>
+
+
+</body>
+</html>
+
